@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Repositorios-->
+    <bean id="studentRepository" class="com.example.repositories.StudentRepository" init-method="initializeBean">
+        <constructor-arg ref="courseRepository" />
+    </bean>
+
+    <bean id="courseRepository" class="com.example.repositories.CourseRepository" />
+
+    <!--Service-->
+    <bean id="studentService" class="com.example.services.StudentService" init-method="initializeData">
+        <constructor-arg ref="studentRepository" />
+    </bean>
+
+    <!-- <bean id="courseService" class="com.example.services.CourseService" init-method="initializeBean">
+        <constructor-arg ref="courseRepository" />
+    </bean> -->
+
+
+</beans>

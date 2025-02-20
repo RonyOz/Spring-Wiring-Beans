@@ -1,0 +1,5 @@
+com\example\model\Course.class
+com\example\repositories\StudentRepository.class
+com\example\model\Student.class
+com\example\services\StudentService.class
+com\example\repositories\CourseRepository.class

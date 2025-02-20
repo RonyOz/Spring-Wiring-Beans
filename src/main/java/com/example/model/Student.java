@@ -1,0 +1,78 @@
+package com.example.model;
+
+import java.util.List;
+
+public class Student {
+    
+    private String code;
+
+    private String name;
+
+    private String program;
+    
+    private List<Course> courses;
+
+    public Student(String code, String name, String program, List<Course> courses) {
+        this.code = code;
+        this.name = name;
+        this.program = program;
+        this.courses = courses;
+    }
+
+    /**
+     * @return the code
+     */
+    public String getCode() {
+        return code;
+    }
+
+    /**
+     * @param code the code to set
+     */
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return the program
+     */
+    public String getProgram() {
+        return program;
+    }
+
+    /**
+     * @param program the program to set
+     */
+    public void setProgram(String program) {
+        this.program = program;
+    }
+
+    /**
+     * @return the courses
+     */
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    /**
+     * @param courses the courses to set
+     */
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
+
+}
