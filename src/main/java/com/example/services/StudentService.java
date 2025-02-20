@@ -4,13 +4,16 @@ import java.util.List;
 
 import com.example.model.Course;
 import com.example.model.Student;
+import com.example.repositories.CourseRepository;
 import com.example.repositories.StudentRepository;
 
 public class StudentService {
     private StudentRepository studentRepository;
+    private CourseRepository courseRepository;
 
-    public StudentService(StudentRepository studentRepository) {
+    public StudentService(StudentRepository studentRepository, CourseRepository courseRepository) {
         this.studentRepository = studentRepository;
+        this.courseRepository = courseRepository;
     }
 
     /**
@@ -18,6 +21,10 @@ public class StudentService {
      */
     public StudentRepository getStudentRepository() {
         return studentRepository;
+    }
+
+    public CourseRepository getCourseRepository() {
+        return courseRepository;
     }
 
     /**
@@ -38,11 +45,27 @@ public class StudentService {
         Student student2 = new Student("A00222222", "Blanca Gutiérrrez", "Ingenieria de Sistemas", List.of(course2,course1));        
         Student student3 = new Student("A00333333", "Carlos Zapata", "Psicología",List.of(course4, course2));           
         
-        studentRepository.save(student1);
-        studentRepository.save(student2);
-        studentRepository.save(student3);
+        addStudent(student1);
+        addStudent(student2);
+        addStudent(student3);
 
-        System.out.println("Data initialized");
-    
     }
+
+    public void addStudent(Student student) {
+        if (!studentRepository.exists(student)) {
+            studentRepository.save(student);
+            // Añadir cursos
+            student.getCourses().forEach(course -> {
+                if (!courseRepository.exists(course)) {
+                    courseRepository.save(course);
+                }
+            });
+
+        } else {
+            System.out.println("Student already exists");
+        }
+
+    }
+
+
 }

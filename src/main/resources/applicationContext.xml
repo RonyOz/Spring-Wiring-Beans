@@ -3,21 +3,20 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--Repositorios-->
-    <bean id="studentRepository" class="com.example.repositories.StudentRepository" init-method="initializeBean">
-        <constructor-arg ref="courseRepository" />
-    </bean>
+    <!--Repositories-->
+    <bean id="studentRepository" class="com.example.repositories.StudentRepository"/>
 
     <bean id="courseRepository" class="com.example.repositories.CourseRepository" />
 
-    <!--Service-->
+    <!--Services-->
     <bean id="studentService" class="com.example.services.StudentService" init-method="initializeData">
         <constructor-arg ref="studentRepository" />
+        <constructor-arg ref="courseRepository" />
     </bean>
 
-    <!-- <bean id="courseService" class="com.example.services.CourseService" init-method="initializeBean">
+    <bean id="courseService" class="com.example.services.courseService" init-method="initializeData">
         <constructor-arg ref="courseRepository" />
-    </bean> -->
+    </bean>
 
 
 </beans>

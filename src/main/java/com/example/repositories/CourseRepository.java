@@ -19,5 +19,9 @@ public class CourseRepository {
         }
     }
 
+    public boolean exists(Course course) {
+        return courses.contains(course);
+    }
+
     
 }

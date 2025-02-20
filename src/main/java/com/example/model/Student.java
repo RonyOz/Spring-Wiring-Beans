@@ -19,6 +19,16 @@ public class Student {
         this.courses = courses;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Student) {
+            Student student = (Student) obj;
+            return student.getCode().equals(this.getCode());
+        } else {
+            return false;
+        }
+    }
+
     /**
      * @return the code
      */
