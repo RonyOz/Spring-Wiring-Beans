@@ -34,7 +34,7 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
-    public void inizializeData() {
+    public void initializeData() {
 
         Course course1 = new Course(59,"Compunet 2","Alejandro Muñoz","MA 14:00 15:59, JU 14:00 15:59");
         Course course2 = new Course(23,"COE 2","Andres Garcia","MI 14:00 15:59");
@@ -67,5 +67,8 @@ public class StudentService {
 
     }
 
+    public List<Student> getStudents() {
+        return studentRepository.findAll();
+    }
 
 }
