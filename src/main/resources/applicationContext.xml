@@ -14,7 +14,7 @@
         <constructor-arg ref="courseRepository" />
     </bean>
 
-    <bean id="courseService" class="com.example.services.courseService" init-method="initializeData">
+    <bean id="courseService" class="com.example.services.CourseService" init-method="initializeData">
         <constructor-arg ref="courseRepository" />
     </bean>
 
