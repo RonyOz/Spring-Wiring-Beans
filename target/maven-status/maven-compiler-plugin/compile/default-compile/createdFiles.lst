@@ -1,7 +1,0 @@
-com\example\repositories\StudentRepository.class
-com\example\servlets\StudentServlet.class
-com\example\model\Course.class
-com\example\servlets\CourserServlet.class
-com\example\model\Student.class
-com\example\services\StudentService.class
-com\example\repositories\CourseRepository.class
