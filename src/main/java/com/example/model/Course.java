@@ -11,13 +11,13 @@ public class Course {
     private String schedule;
 
     /**
-     * @param id
+     * @param courseId
      * @param name
      * @param professorName
      * @param schedule
      */
-    public Course(int id, String name, String professorName, String schedule) {
-        this.id = id;
+    public Course(int courseId, String name, String professorName, String schedule) {
+        this.id = courseId;
         this.name = name;
         this.professorName = professorName;
         this.schedule = schedule;
@@ -88,6 +88,16 @@ public class Course {
      */
     public void setSchedule(String schedule) {
         this.schedule = schedule;
+    }
+
+    public int getCourseId() {
+        return this.id;
+    }
+
+    @Override
+    public String toString() {
+        return "Course [id=" + id + ", name=" + name + ", professorName=" + professorName + ", schedule=" + schedule
+                + "]";
     }
 
 }

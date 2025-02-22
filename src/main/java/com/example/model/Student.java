@@ -85,4 +85,9 @@ public class Student {
         this.courses = courses;
     }
 
+    @Override
+    public String toString() {
+        return "Student [code=" + code + ", name=" + name + ", program=" + program + ", courses=" + courses + "]";
+    }
+
 }
