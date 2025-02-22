@@ -23,5 +23,14 @@ public class CourseRepository {
         return courses.contains(course);
     }
 
+    public Course getCourse(int courseId) {
+        for (Course course : courses) {
+            if (course.getCourseId() == courseId) {
+                return course;
+            }
+        }
+        return null;
+    }
+
     
 }
