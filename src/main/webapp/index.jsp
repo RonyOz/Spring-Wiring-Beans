@@ -1,5 +1,4 @@
-<%@ page import="org.springframework.context.ApplicationContext" %>
-<%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
+<%@ page import="com.example.Application.Application" %>
 <%@ page import="com.example.services.CourseService" %>
 <%@ page import="com.example.services.StudentService" %>
 <%@ page import="com.example.model.Course" %> 
@@ -17,8 +16,7 @@
       <h2>Courses List</h2>
       <ul>
         <%
-          ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
-          CourseService cs = (CourseService) ctx.getBean("courseService");
+          CourseService cs = (CourseService) Application.getContext().getBean("courseService");
 
           for (Course course : cs.getCourses()) {
             out.println("<li>" + course.toString() + "</li>");
@@ -54,7 +52,7 @@
       <h2>Students List</h2>
       <ul >
         <%
-          StudentService ss = (StudentService) ctx.getBean("studentService");
+          StudentService ss = (StudentService) Application.getContext().getBean("studentService");
 
           for (Student student : ss.getStudents()) {
             out.println("<li>" + student.toString() + "</li>");
