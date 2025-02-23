@@ -15,7 +15,7 @@
     <!-- Courses List -->
     <section>
       <h2>Courses List</h2>
-      <ul class="course-list">
+      <ul>
         <%
           ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
           CourseService cs = (CourseService) ctx.getBean("courseService");
@@ -28,7 +28,7 @@
     </section>
 
     <!-- Form -->
-    <form action="courseServlet" method="post">
+    <form action="course" method="post">
       <fieldset>
         <legend>Register Course</legend>
 
@@ -52,7 +52,7 @@
     <!-- Students List -->
     <section>
       <h2>Students List</h2>
-      <ul class="course-list">
+      <ul >
         <%
           StudentService ss = (StudentService) ctx.getBean("studentService");
 
@@ -64,7 +64,7 @@
     </section>
 
     <!-- Form -->
-    <form action="studentServlet" method="post">
+    <form action="student" method="post">
       <fieldset>
         <legend>Add Student</legend>
 
