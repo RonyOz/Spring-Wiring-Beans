@@ -2,9 +2,14 @@ package com.example.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.example.model.Course;
 import com.example.repositories.CourseRepository;
 
+import jakarta.annotation.PostConstruct;
+
+@Service
 public class CourseService {
 
     CourseRepository courseRepository;
@@ -21,6 +26,7 @@ public class CourseService {
         this.courseRepository = courseRepository;
     }
 
+    @PostConstruct
     public void initializeData() {
     }
 

@@ -7,7 +7,7 @@
 
 <html>
   <head>
-      <title>Version AppConfig</title>
+      <title>Version Annotations</title>
   </head>
   <body>
 

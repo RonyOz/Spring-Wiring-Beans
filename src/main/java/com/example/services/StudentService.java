@@ -3,11 +3,16 @@ package com.example.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.example.model.Course;
 import com.example.model.Student;
 import com.example.repositories.CourseRepository;
 import com.example.repositories.StudentRepository;
 
+import jakarta.annotation.PostConstruct;
+
+@Component
 public class StudentService {
     private StudentRepository studentRepository;
     private CourseRepository courseRepository;
@@ -35,6 +40,7 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
+    @PostConstruct
     public void initializeData() {
 
         Course course1 = new Course(59,"Compunet 2","Alejandro Muñoz","MA 14:00 15:59, JU 14:00 15:59");

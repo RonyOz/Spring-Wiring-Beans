@@ -3,6 +3,9 @@ package com.example.repositories;
 import com.example.model.Course;
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class CourseRepository {
     private ArrayList<Course> courses = new ArrayList<>();
     
