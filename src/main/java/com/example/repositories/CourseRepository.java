@@ -2,14 +2,12 @@ package com.example.repositories;
 
 import com.example.model.Course;
 import java.util.ArrayList;
-import java.util.List;
-
 
 public class CourseRepository {
-    private List<Course> courses = new ArrayList<>();
+    private ArrayList<Course> courses = new ArrayList<>();
     
 
-    public List<Course> findAll() {
+    public ArrayList<Course> findAll() {
         return courses;
     }
 
