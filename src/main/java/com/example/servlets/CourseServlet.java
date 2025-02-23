@@ -2,8 +2,8 @@ package com.example.servlets;
 
 import java.io.IOException;
 
+import com.example.Application.Application;
 import com.example.model.Course;
-import com.example.repositories.CourseRepository;
 import com.example.services.CourseService;
 
 import jakarta.servlet.ServletException;
@@ -18,7 +18,7 @@ public class CourseServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        courseService = new CourseService(new CourseRepository());
+        courseService = (CourseService) Application.getContext().getBean(CourseService.class);
     }
 
     @Override
