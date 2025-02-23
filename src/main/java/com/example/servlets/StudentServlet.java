@@ -3,10 +3,9 @@ package com.example.servlets;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import com.example.Application.Application;
 import com.example.model.Course;
 import com.example.model.Student;
-import com.example.repositories.CourseRepository;
-import com.example.repositories.StudentRepository;
 import com.example.services.StudentService;
 import com.example.services.CourseService;
 
@@ -22,7 +21,7 @@ public class StudentServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        studentService = new StudentService(new StudentRepository(), new CourseRepository());
+        studentService = (StudentService) Application.getContext().getBean(StudentService.class);
     }
 
     @Override

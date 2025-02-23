@@ -1,5 +1,4 @@
-<%@ page import="org.springframework.context.ApplicationContext" %>
-<%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
+<%@ page import="com.example.Application.Application" %>
 <%@ page import="com.example.services.CourseService" %>
 <%@ page import="com.example.services.StudentService" %>
 <%@ page import="com.example.model.Course" %> 
@@ -8,17 +7,16 @@
 
 <html>
   <head>
-      <title>Version XML</title>
+      <title>Version AppConfig</title>
   </head>
   <body>
 
     <!-- Courses List -->
     <section>
       <h2>Courses List</h2>
-      <ul class="course-list">
+      <ul>
         <%
-          ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
-          CourseService cs = (CourseService) ctx.getBean("courseService");
+          CourseService cs = (CourseService) Application.getContext().getBean("courseService");
 
           for (Course course : cs.getCourses()) {
             out.println("<li>" + course.toString() + "</li>");
@@ -28,7 +26,7 @@
     </section>
 
     <!-- Form -->
-    <form action="courseServlet" method="post">
+    <form action="course" method="post">
       <fieldset>
         <legend>Register Course</legend>
 
@@ -52,9 +50,9 @@
     <!-- Students List -->
     <section>
       <h2>Students List</h2>
-      <ul class="course-list">
+      <ul >
         <%
-          StudentService ss = (StudentService) ctx.getBean("studentService");
+          StudentService ss = (StudentService) Application.getContext().getBean("studentService");
 
           for (Student student : ss.getStudents()) {
             out.println("<li>" + student.toString() + "</li>");
@@ -64,7 +62,7 @@
     </section>
 
     <!-- Form -->
-    <form action="studentServlet" method="post">
+    <form action="student" method="post">
       <fieldset>
         <legend>Add Student</legend>
 
