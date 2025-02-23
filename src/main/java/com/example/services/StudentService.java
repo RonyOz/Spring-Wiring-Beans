@@ -61,8 +61,15 @@ public class StudentService {
                 }
             });
 
+        } else if (student.getCourses() != null) {
+            student.getCourses().forEach(course -> {
+                if (!courseRepository.exists(course)) {
+                    courseRepository.save(course);
+                }
+            });
+
         } else {
-            System.out.println("Student already exists");
+            System.out.println("Student does not have courses");
         }
 
     }
