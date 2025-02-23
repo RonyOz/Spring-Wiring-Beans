@@ -11,7 +11,6 @@ The goal of this project is to understand the evolution of dependency injection 
 
 This exploration also aims to reinforce fundamental concepts of web applications, emphasizing a **layered architecture**:
 
-![alt text](image.png)
 
 1. **Data Access Layer**: Manages data persistence and retrieval.
 2. **Business Logic Layer**: Defines the configuration and dependency injection mechanisms.
@@ -40,8 +39,8 @@ Each branch contains an implementation of a simple service-based application fol
 ## Getting Started
 ### **Cloning the Repository**
 ```sh
-git clone https://github.com/ronyoz/wiring-beans.git
-cd wiring-beans
+git clone https://github.com/RonyOz/Spring-Wiring-Beans.git
+cd Spring-Wiring-Beans
 ```
 
 ### **Switching Between Implementations**
