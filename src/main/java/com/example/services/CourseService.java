@@ -33,7 +33,9 @@ public class CourseService {
     }
 
     public void addCourse(Course course) {
-        courseRepository.save(course);
+        if (!courseRepository.exists(course)) {
+            courseRepository.save(course);
+        }
     }
 
     public List<Course> getCourses() {

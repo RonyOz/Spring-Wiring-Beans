@@ -12,6 +12,10 @@ public class StudentRepository {
         return students;
     }
 
+    public Student findByCode(String code) {
+        return students.stream().filter(student -> student.getCode().equals(code)).findFirst().orElse(null);
+    }
+
     public void save(Student student) {
         students.add(student);        
     }

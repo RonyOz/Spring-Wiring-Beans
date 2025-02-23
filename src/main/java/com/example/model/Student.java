@@ -1,6 +1,6 @@
 package com.example.model;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Student {
     
@@ -10,9 +10,9 @@ public class Student {
 
     private String program;
     
-    private List<Course> courses;
+    private ArrayList<Course> courses;
 
-    public Student(String code, String name, String program, List<Course> courses) {
+    public Student(String code, String name, String program, ArrayList<Course> courses) {
         this.code = code;
         this.name = name;
         this.program = program;
@@ -74,15 +74,19 @@ public class Student {
     /**
      * @return the courses
      */
-    public List<Course> getCourses() {
+    public ArrayList<Course> getCourses() {
         return courses;
     }
 
     /**
      * @param courses the courses to set
      */
-    public void setCourses(List<Course> courses) {
+    public void setCourses(ArrayList<Course> courses) {
         this.courses = courses;
+    }
+
+    public void addCourse(Course course) {
+        this.courses.add(course);
     }
 
     @Override
