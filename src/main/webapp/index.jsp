@@ -34,13 +34,13 @@
         <input type="number" id="courseId" name="courseId" required>
 
         <label for="courseName">Course Name:</label>
-        <input type="text" id="courseName" name="courseName">
+        <input type="text" id="courseName" name="courseName" required>
 
         <label for="professorName">Professor Name:</label>
-        <input type="text" id="professorName" name="professorName">
+        <input type="text" id="professorName" name="professorName" required>
 
         <label for="schedule">Schedule:</label>
-        <input type="text" id="schedule" name="schedule">
+        <input type="text" id="schedule" name="schedule" required>
 
         <button type="submit">Register Course</button>
       </fieldset>
