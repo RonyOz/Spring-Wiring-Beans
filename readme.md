@@ -39,8 +39,8 @@ Each branch contains an implementation of a simple service-based application fol
 ## Getting Started
 ### **Cloning the Repository**
 ```sh
-git clone https://github.com/ronyoz/wiring-beans.git
-cd wiring-beans
+git clone https://github.com/RonyOz/Spring-Wiring-Beans.git
+cd Spring-Wiring-Beans
 ```
 
 ### **Switching Between Implementations**
