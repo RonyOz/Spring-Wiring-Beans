@@ -83,4 +83,9 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
+    public List<Course> getCoursesByStudentCode(String code) {
+        if (code != null && !code.isEmpty()) {return studentRepository.findByCode(code).getCourses();}
+        else return courseRepository.findAll();
+    }
+
 }

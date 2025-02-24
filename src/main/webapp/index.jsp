@@ -1,6 +1,7 @@
 <%@ page import="com.example.Application.Application" %>
 <%@ page import="com.example.services.CourseService" %>
 <%@ page import="com.example.services.StudentService" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page import="com.example.model.Course" %> 
 <%@ page import="com.example.model.Student" %> 
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
@@ -14,14 +15,24 @@
     <!-- Courses List -->
     <section>
       <h2>Courses List</h2>
-      <ul>
-        <%
-          CourseService cs = (CourseService) Application.getContext().getBean("courseService");
 
-          for (Course course : cs.getCourses()) {
-            out.println("<li>" + course.toString() + "</li>");
-          }
-        %>
+      <!-- Search Bar -->
+      <form action="" method="get">
+        <label for="studentCode">Search by Student Code:</label>
+        <input type="text" id="studentCode" name="studentCode">
+        <button type="submit">Search</button>
+      </form>
+
+      <ul>
+      <%
+        StudentService ss = (StudentService) Application.getContext().getBean("studentService");
+        CourseService cs = (CourseService) Application.getContext().getBean("courseService");
+
+        for (Course course : ss.getCoursesByStudentCode(request.getParameter("studentCode"))) {
+          out.println("<li>" + course.toString() + "</li>");
+        }
+
+      %>
       </ul>
     </section>
 
@@ -52,7 +63,6 @@
       <h2>Students List</h2>
       <ul >
         <%
-          StudentService ss = (StudentService) Application.getContext().getBean("studentService");
 
           for (Student student : ss.getStudents()) {
             out.println("<li>" + student.toString() + "</li>");
